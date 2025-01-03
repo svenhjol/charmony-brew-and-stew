@@ -9,7 +9,7 @@ import svenhjol.charmony.core.enums.Side;
     id = CookingMod.ID,
     sides = {Side.Client, Side.Common},
     name = "Cooking",
-    description = "")
+    description = "Adds a cooking pot that can be used to combine different foods into a single stew.")
 public final class CookingMod extends Mod {
     public static final String ID = "charmony-cooking";
     private static CookingMod instance;
