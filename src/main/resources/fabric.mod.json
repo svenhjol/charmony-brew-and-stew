@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "charmony-cooking",
+  "version": "${mod_version}",
+
+  "name": "Charmony Cooking",
+  "description": "Charmony Cooking",
+
+  "authors": [
+    "svenhjol"
+  ],
+  "icon": "assets/charmony-cooking/textures/gui/sprites/icon.png",
+  "license": "MIT",
+  "environment": "*",
+  "accessWidener": "charmony-cooking.accesswidener",
+  "entrypoints": {
+    "main": [
+        "svenhjol.charmony.cooking.common.CommonInitializer"
+    ],
+    "client": [
+        "svenhjol.charmony.cooking.client.ClientInitializer"
+    ],
+    "modmenu": [
+        "svenhjol.charmony.cooking.integration.ModMenuPlugin"
+    ]
+  },
+
+  "mixins": [],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "*",
+    "java": ">=${java_version}",
+    "fabric-api": "*",
+    "charmony": ">=${charmony_version}",
+    "charmony-api": ">=${api_version}"
+  },
+
+  "contact": {
+    "homepage": "${homepage_link}",
+    "sources": "https://github.com/svenhjol/${mod_id}"
+  },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "${discord_link}"
+      },
+      "update_checker": true
+    }
+  }
+}

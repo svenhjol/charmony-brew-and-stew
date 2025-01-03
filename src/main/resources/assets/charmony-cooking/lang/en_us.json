@@ -1,0 +1,13 @@
+{
+  "block.charmony-cooking.cooking_pot": "Cooking Pot",
+  "item.charmony-cooking.cooking_pot": "Cooking Pot",
+  "item.charmony-cooking.mixed_stew": "Mixed Stew",
+  "subtitles.charmony-cooking.block.cask.add": "Cask fills up",
+  "subtitles.charmony-cooking.block.cask.empty": "Cask is empty",
+  "subtitles.charmony-cooking.block.cask.name": "Cask given a name",
+  "subtitles.charmony-cooking.block.cask.take": "Cask empties",
+  "subtitles.charmony-cooking.block.cooking_pot.add": "Cooking pot fills up",
+  "subtitles.charmony-cooking.block.cooking_pot.ambient": "Cooking pot simmers",
+  "subtitles.charmony-cooking.block.cooking_pot.finish": "Cooking pot finishes cooking",
+  "subtitles.charmony-cooking.block.cooking_pot.take": "Cooking pot empties"
+}

@@ -1,0 +1,29 @@
+package svenhjol.charmony.cooking;
+
+import net.minecraft.resources.ResourceLocation;
+import svenhjol.charmony.core.annotations.ModDefinition;
+import svenhjol.charmony.core.base.Mod;
+import svenhjol.charmony.core.enums.Side;
+
+@ModDefinition(
+    id = CookingMod.ID,
+    sides = {Side.Client, Side.Common},
+    name = "Cooking",
+    description = "")
+public final class CookingMod extends Mod {
+    public static final String ID = "charmony-cooking";
+    private static CookingMod instance;
+
+    private CookingMod() {}
+
+    public static CookingMod instance() {
+        if (instance == null) {
+            instance = new CookingMod();
+        }
+        return instance;
+    }
+
+    public static ResourceLocation id(String path) {
+        return ResourceLocation.fromNamespaceAndPath(ID, path);
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "charmony-cooking:item/mixed_stew"
+  }
+}

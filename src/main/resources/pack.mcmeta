@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "description": "Charmony Cooking resources",
+    "pack_format": ${pack_version}
+  }
+}
