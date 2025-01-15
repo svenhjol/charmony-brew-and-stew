@@ -4,7 +4,7 @@
   "version": "${mod_version}",
 
   "name": "Charmony Cooking",
-  "description": "Adds a cooking pot that can be used to combine different foods into a single stew.",
+  "description": "Adds cooking pots that let you combine any food into stew.",
 
   "authors": [
     "svenhjol"
