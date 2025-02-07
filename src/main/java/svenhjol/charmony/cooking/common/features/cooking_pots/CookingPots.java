@@ -7,7 +7,6 @@ import svenhjol.charmony.core.annotations.FeatureDefinition;
 import svenhjol.charmony.core.base.Mod;
 import svenhjol.charmony.core.base.SidedFeature;
 import svenhjol.charmony.core.enums.Side;
-import svenhjol.charmony.cooking.CookingMod;
 
 @FeatureDefinition(side = Side.Common, description = """
     Cooking pots allow any food item to be added. Once the combined nourishment total has reached maximum, use wooden bowls to take mixed stew from the pot.
@@ -47,7 +46,7 @@ public final class CookingPots extends SidedFeature {
     }
 
     public static CookingPots feature() {
-        return CookingMod.instance().sidedFeature(CookingPots.class);
+        return Mod.getSidedFeature(CookingPots.class);
     }
 
     public int stewHungerRestored() {

@@ -7,7 +7,7 @@ import svenhjol.charmony.core.enums.Side;
 
 import java.util.function.Supplier;
 
-@FeatureDefinition(side = Side.Client, showInConfig = false)
+@FeatureDefinition(side = Side.Client, canBeDisabledInConfig = false)
 public final class CookingPots extends SidedFeature {
     public final Supplier<Common> common;
     public final Registers registers;
