@@ -9,6 +9,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -133,12 +134,12 @@ public class CookingPotBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier insideBlockEffectApplier) {
         if (level.getBlockEntity(pos) instanceof CookingPotBlockEntity pot) {
             CookingPots.feature().handlers.entityInside(level, pos, state, entity, pot);
             return;
         }
-        super.entityInside(state, level, pos, entity);
+        super.entityInside(state, level, pos, entity, insideBlockEffectApplier);
     }
 
     @Override
