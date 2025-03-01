@@ -35,8 +35,8 @@ public class CookingPotBlockEntity extends SyncedBlockEntity {
     public void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
         super.loadAdditional(tag, provider);
 
-        hunger = tag.getInt(HUNGER_TAG);
-        saturation = tag.getFloat(SATURATION_TAG);
+        tag.getInt(HUNGER_TAG).ifPresent(i -> hunger = i);
+        tag.getFloat(SATURATION_TAG).ifPresent(f -> saturation = f);
     }
 
     @Override
