@@ -1,4 +1,4 @@
-package svenhjol.charmony.cooking.client.feature.cooking_pots;
+package svenhjol.charmony.cooking.client.features.cooking_pots;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
