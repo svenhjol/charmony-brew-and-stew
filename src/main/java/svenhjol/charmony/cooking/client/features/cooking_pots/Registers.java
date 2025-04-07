@@ -24,7 +24,7 @@ public final class Registers extends Setup<CookingPots> {
             var registry = ClientRegistry.forFeature(feature());
             var common = feature().common.get();
 
-            registry.blockColor(feature().handlers::handleBlockColor, List.of(common.registers.block));
+            registry.blockColor(feature().handlers::handleBlockColor, List.of(common.registers.block.get()));
             registry.itemTab(common.registers.block.get(), CreativeModeTabs.FUNCTIONAL_BLOCKS, Items.CAULDRON);
             registry.itemTab(common.registers.mixedStewItem.get(), CreativeModeTabs.FOOD_AND_DRINKS, Items.RABBIT_STEW);
         };
