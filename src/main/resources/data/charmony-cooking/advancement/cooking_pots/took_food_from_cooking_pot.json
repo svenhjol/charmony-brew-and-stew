@@ -1,14 +1,14 @@
 {
-  "parent": "charmony:cooking_pots/prepared_cooking_pot",
+  "parent": "charmony-cooking:cooking_pots/prepared_cooking_pot",
   "display": {
     "icon": {
       "id": "charmony-cooking:mixed_stew"
     },
     "title": {
-      "translate": "advancements.charmony.took_food_from_cooking_pot.title"
+      "translate": "advancements.charmony-cooking.took_food_from_cooking_pot.title"
     },
     "description": {
-      "translate": "advancements.charmony.took_food_from_cooking_pot.description"
+      "translate": "advancements.charmony-cooking.took_food_from_cooking_pot.description"
     },
     "frame": "challenge",
     "show_toast": true,

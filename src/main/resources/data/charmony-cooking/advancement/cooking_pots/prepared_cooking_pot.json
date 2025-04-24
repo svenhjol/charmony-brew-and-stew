@@ -1,14 +1,14 @@
 {
-  "parent": "charmony:cooking_pots/obtained_cooking_pot",
+  "parent": "charmony-cooking:cooking_pots/obtained_cooking_pot",
   "display": {
     "icon": {
       "id": "minecraft:water_bucket"
     },
     "title": {
-      "translate": "advancements.charmony.prepared_cooking_pot.title"
+      "translate": "advancements.charmony-cooking.prepared_cooking_pot.title"
     },
     "description": {
-      "translate": "advancements.charmony.prepared_cooking_pot.description"
+      "translate": "advancements.charmony-cooking.prepared_cooking_pot.description"
     },
     "frame": "goal",
     "show_toast": true,

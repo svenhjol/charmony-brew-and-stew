@@ -1,14 +1,14 @@
 {
-  "parent": "charmony:cooking",
+  "parent": "charmony-cooking:root",
   "display": {
     "icon": {
       "id": "charmony-cooking:cooking_pot"
     },
     "title": {
-      "translate": "advancements.charmony.obtained_cooking_pot.title"
+      "translate": "advancements.charmony-cooking.obtained_cooking_pot.title"
     },
     "description": {
-      "translate": "advancements.charmony.obtained_cooking_pot.description"
+      "translate": "advancements.charmony-cooking.obtained_cooking_pot.description"
     },
     "frame": "task",
     "show_toast": true,

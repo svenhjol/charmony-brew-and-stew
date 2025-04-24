@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.3
+
+- Standardize advancement namespace.
+
 ## 1.3.0
 
 - Update for Minecraft 1.21.5.

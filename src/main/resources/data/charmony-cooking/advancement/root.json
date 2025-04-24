@@ -5,10 +5,10 @@
       "id": "minecraft:mushroom_stew"
     },
     "title": {
-      "translate": "advancements.charmony.cooking.title"
+      "translate": "advancements.charmony-cooking.cooking.title"
     },
     "description": {
-      "translate": "advancements.charmony.cooking.description"
+      "translate": "advancements.charmony-cooking.cooking.description"
     },
     "frame": "task",
     "show_toast": false,
