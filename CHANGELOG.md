@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.4
+
+- Allow adding food by player use as well as entity interact.
+
 ## 1.3.3
 
 - Standardize advancement namespace.

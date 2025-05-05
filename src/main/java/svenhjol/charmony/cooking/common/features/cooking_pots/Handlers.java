@@ -145,7 +145,14 @@ public final class Handlers extends Setup<CookingPots> {
                     }
                 }
                 return InteractionResult.SUCCESS;
+
+            } else if (isFood(stack) && pot.canAddFood()) {
+
+                tryAddFood(level, pos, stack, pot);
+                return InteractionResult.SUCCESS;
+
             }
+
         }
 
         return InteractionResult.PASS;
@@ -181,31 +188,34 @@ public final class Handlers extends Setup<CookingPots> {
     }
 
     public void entityInside(Level level, BlockPos pos, BlockState state, Entity entity, CookingPotBlockEntity pot) {
-        var center = pos.getCenter();
-        
         if (entity instanceof ItemEntity itemEntity && !level.isClientSide()) {
             var stack = itemEntity.getItem();
-            if (isFood(stack) && pot.canAddFood()) {
-                var result = pot.add(stack);
-                if (result) {
-                    level.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 0.25f, 1.0f);
-
-                    // Do prepare cooking pot advancement for all nearby players.
-                    PlayerHelper.getPlayersInRange(level, pos, 8.0d)
-                        .forEach(player -> feature().advancements.preparedCookingPot(player));
-
-                    // Handle containers e.g. bowl, bottle. They sit in the pot until taken out by player or hopper.
-                    var foodContainer = getFoodContainer(stack).copy();
-                    log().dev("Food container item: " + foodContainer);
-                    if (!foodContainer.isEmpty()) {
-                        level.addFreshEntity(new ItemEntity(level, center.x(), center.y(), center.z(), foodContainer));
-                    }
-
-                    stack.shrink(1);
-                }
-            }
+            tryAddFood(level, pos, stack, pot);
             if (stack.isEmpty()) {
                 itemEntity.discard();
+            }
+        }
+    }
+
+    public void tryAddFood(Level level, BlockPos pos, ItemStack stack, CookingPotBlockEntity pot) {
+        if (isFood(stack) && pot.canAddFood()) {
+            var center = pos.getCenter();
+            var result = pot.add(stack);
+            if (result) {
+                level.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 0.25f, 1.0f);
+
+                // Do prepare cooking pot advancement for all nearby players.
+                PlayerHelper.getPlayersInRange(level, pos, 8.0d)
+                    .forEach(player -> feature().advancements.preparedCookingPot(player));
+
+                // Handle containers e.g. bowl, bottle. They sit in the pot until taken out by player or hopper.
+                var foodContainer = getFoodContainer(stack).copy();
+                log().dev("Food container item: " + foodContainer);
+                if (!foodContainer.isEmpty()) {
+                    level.addFreshEntity(new ItemEntity(level, center.x(), center.y(), center.z(), foodContainer));
+                }
+
+                stack.shrink(1);
             }
         }
     }
