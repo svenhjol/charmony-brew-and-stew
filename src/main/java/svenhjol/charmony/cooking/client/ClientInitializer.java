@@ -1,7 +1,7 @@
 package svenhjol.charmony.cooking.client;
 
 import net.fabricmc.api.ClientModInitializer;
-import svenhjol.charmony.core.enums.Side;
+import svenhjol.charmony.api.core.Side;
 import svenhjol.charmony.cooking.CookingMod;
 import svenhjol.charmony.cooking.client.features.cooking_pots.CookingPots;
 

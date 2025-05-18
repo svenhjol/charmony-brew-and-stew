@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+
+- Update for Charmony and API.
+
 ## 1.3.4
 
 - Allow adding food by player use as well as entity interact.
