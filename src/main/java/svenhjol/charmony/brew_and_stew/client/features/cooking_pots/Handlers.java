@@ -1,4 +1,4 @@
-package svenhjol.charmony.brewing.client.features.cooking_pots;
+package svenhjol.charmony.brew_and_stew.client.features.cooking_pots;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
@@ -8,8 +8,8 @@ import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import svenhjol.charmony.core.base.Setup;
-import svenhjol.charmony.brewing.common.features.cooking_pots.CookingPotBlock;
-import svenhjol.charmony.brewing.common.features.cooking_pots.Networking.S2CAddedToCookingPot;
+import svenhjol.charmony.brew_and_stew.common.features.cooking_pots.CookingPotBlock;
+import svenhjol.charmony.brew_and_stew.common.features.cooking_pots.Networking.S2CAddedToCookingPot;
 
 public final class Handlers extends Setup<CookingPots> {
     public Handlers(CookingPots feature) {
@@ -19,11 +19,11 @@ public final class Handlers extends Setup<CookingPots> {
     public int handleBlockColor(BlockState state, BlockAndTintGetter level, BlockPos pos, int tintIndex) {
         if (tintIndex == 0) {
             return switch (state.getValue(CookingPotBlock.COOKING_STATUS)) {
-                case EMPTY -> -1;
-                case HAS_SOME_WATER -> 0x1199dd;
-                case FILLED_WITH_WATER -> 0x0088cc;
-                case HAS_SOME_FOOD -> 0x807046;
-                case COOKED -> 0x442800;
+                case Empty -> -1;
+                case HasSomeWater -> 0x1199dd;
+                case FilledWithWater -> 0x0088cc;
+                case HasSomeFood -> 0x807053;
+                case Cooked -> 0x482800;
             };
         }
         return -1;

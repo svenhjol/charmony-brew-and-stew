@@ -1,4 +1,4 @@
-package svenhjol.charmony.brewing;
+package svenhjol.charmony.brew_and_stew;
 
 import net.minecraft.resources.ResourceLocation;
 import svenhjol.charmony.api.core.ModDefinition;
@@ -6,19 +6,19 @@ import svenhjol.charmony.core.base.Mod;
 import svenhjol.charmony.api.core.Side;
 
 @ModDefinition(
-    id = BrewingMod.ID,
+    id = BrewAndStewMod.ID,
     sides = {Side.Client, Side.Common},
-    name = "Brewing",
+    name = "Brew And Stew",
     description = "Adds a cooking pot that can be used to combine different foods into a single stew.")
-public final class BrewingMod extends Mod {
-    public static final String ID = "charmony-brewing";
-    private static BrewingMod instance;
+public final class BrewAndStewMod extends Mod {
+    public static final String ID = "charmony-brew-and-stew";
+    private static BrewAndStewMod instance;
 
-    private BrewingMod() {}
+    private BrewAndStewMod() {}
 
-    public static BrewingMod instance() {
+    public static BrewAndStewMod instance() {
         if (instance == null) {
-            instance = new BrewingMod();
+            instance = new BrewAndStewMod();
         }
         return instance;
     }

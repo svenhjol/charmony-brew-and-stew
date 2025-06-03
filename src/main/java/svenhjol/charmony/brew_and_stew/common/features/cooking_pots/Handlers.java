@@ -1,4 +1,4 @@
-package svenhjol.charmony.brewing.common.features.cooking_pots;
+package svenhjol.charmony.brew_and_stew.common.features.cooking_pots;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
@@ -27,7 +27,7 @@ import svenhjol.charmony.core.helpers.PlayerHelper;
 import java.util.Optional;
 
 public final class Handlers extends Setup<CookingPots> {
-    public static final int MAX_PORTIONS = 6;
+    public static final int MAX_PORTIONS = 4;
 
     public Handlers(CookingPots feature) {
         super(feature);
@@ -42,7 +42,7 @@ public final class Handlers extends Setup<CookingPots> {
 
     public Consumable buildMixedStewConsumable() {
         return Consumables.defaultFood()
-            .consumeSeconds(0.8f)
+            .consumeSeconds(1.2f)
             .build();
     }
 

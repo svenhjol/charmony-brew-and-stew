@@ -1,10 +1,10 @@
-package svenhjol.charmony.brewing.client.features.cooking_pots;
+package svenhjol.charmony.brew_and_stew.client.features.cooking_pots;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 import svenhjol.charmony.core.base.Setup;
 import svenhjol.charmony.core.client.ClientRegistry;
-import svenhjol.charmony.brewing.common.features.cooking_pots.Networking;
+import svenhjol.charmony.brew_and_stew.common.features.cooking_pots.Networking;
 
 import java.util.List;
 

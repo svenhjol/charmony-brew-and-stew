@@ -1,9 +1,9 @@
-package svenhjol.charmony.brewing.client;
+package svenhjol.charmony.brew_and_stew.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import svenhjol.charmony.api.core.Side;
-import svenhjol.charmony.brewing.BrewingMod;
-import svenhjol.charmony.brewing.client.features.cooking_pots.CookingPots;
+import svenhjol.charmony.brew_and_stew.BrewAndStewMod;
+import svenhjol.charmony.brew_and_stew.client.features.cooking_pots.CookingPots;
 
 public final class ClientInitializer implements ClientModInitializer {
     @Override
@@ -12,7 +12,7 @@ public final class ClientInitializer implements ClientModInitializer {
         svenhjol.charmony.core.client.ClientInitializer.init();
 
         // Prepare and run the mod.
-        var mod = BrewingMod.instance();
+        var mod = BrewAndStewMod.instance();
         mod.addSidedFeature(CookingPots.class);
         mod.run(Side.Client);
     }

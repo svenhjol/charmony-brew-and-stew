@@ -36,22 +36,6 @@
       "when": {
         "portions": "4"
       }
-    },
-    {
-      "apply": {
-        "model": "charmony:block/cooking_pot_level5"
-      },
-      "when": {
-        "portions": "5"
-      }
-    },
-    {
-      "apply": {
-        "model": "charmony:block/cooking_pot_level6"
-      },
-      "when": {
-        "portions": "6"
-      }
     }
   ]
 }

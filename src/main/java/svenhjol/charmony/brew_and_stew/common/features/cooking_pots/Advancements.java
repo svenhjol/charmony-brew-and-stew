@@ -1,4 +1,4 @@
-package svenhjol.charmony.brewing.common.features.cooking_pots;
+package svenhjol.charmony.brew_and_stew.common.features.cooking_pots;
 
 import net.minecraft.world.entity.player.Player;
 import svenhjol.charmony.core.base.Setup;

@@ -1,4 +1,4 @@
-package svenhjol.charmony.brewing.common.features.cooking_pots;
+package svenhjol.charmony.brew_and_stew.common.features.cooking_pots;
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;

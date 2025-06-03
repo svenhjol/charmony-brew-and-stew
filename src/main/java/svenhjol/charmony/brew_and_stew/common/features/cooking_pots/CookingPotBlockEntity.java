@@ -1,4 +1,4 @@
-package svenhjol.charmony.brewing.common.features.cooking_pots;
+package svenhjol.charmony.brew_and_stew.common.features.cooking_pots;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -93,7 +93,6 @@ public class CookingPotBlockEntity extends SyncedBlockEntity {
             if (level != null) {
                 var pos = getBlockPos();
                 var state = getBlockState();
-                var random = level.getRandom();
                 var hunger = food.nutrition();
                 var saturation = food.saturation();
 
@@ -111,10 +110,10 @@ public class CookingPotBlockEntity extends SyncedBlockEntity {
                 debugShowContents();
 
                 if (hasFinishedCooking()) {
-                    state = state.setValue(CookingPotBlock.COOKING_STATUS, CookingStatus.COOKED);
+                    state = state.setValue(CookingPotBlock.COOKING_STATUS, CookingStatus.Cooked);
                     level.playSound(null, pos, feature().registers.finishSound.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
                 } else {
-                    state = state.setValue(CookingPotBlock.COOKING_STATUS, CookingStatus.HAS_SOME_FOOD);
+                    state = state.setValue(CookingPotBlock.COOKING_STATUS, CookingStatus.HasSomeFood);
                 }
 
                 level.setBlock(pos, state, 3);
@@ -160,7 +159,6 @@ public class CookingPotBlockEntity extends SyncedBlockEntity {
         var pos = getBlockPos();
         var state = getBlockState();
         int numberOfPortions = state.getValue(CookingPotBlock.PORTIONS);
-        var currentStatus = state.getValue(CookingPotBlock.COOKING_STATUS);
         
         if (level == null) {
             return false;
@@ -177,9 +175,9 @@ public class CookingPotBlockEntity extends SyncedBlockEntity {
             state = state.setValue(CookingPotBlock.PORTIONS, numberOfPortions);
             
             if (numberOfPortions == Handlers.MAX_PORTIONS) {
-                state = state.setValue(CookingPotBlock.COOKING_STATUS, CookingStatus.FILLED_WITH_WATER);
+                state = state.setValue(CookingPotBlock.COOKING_STATUS, CookingStatus.FilledWithWater);
             } else {
-                state = state.setValue(CookingPotBlock.COOKING_STATUS, CookingStatus.HAS_SOME_WATER);
+                state = state.setValue(CookingPotBlock.COOKING_STATUS, CookingStatus.HasSomeWater);
             }
         } else {
             return false;
@@ -207,7 +205,7 @@ public class CookingPotBlockEntity extends SyncedBlockEntity {
         var pos = getBlockPos();
         var state = getBlockState()
             .setValue(CookingPotBlock.PORTIONS, feature().handlers.maxPortions())
-            .setValue(CookingPotBlock.COOKING_STATUS, CookingStatus.FILLED_WITH_WATER);
+            .setValue(CookingPotBlock.COOKING_STATUS, CookingStatus.FilledWithWater);
 
         if (level == null) {
             return false;
@@ -228,7 +226,7 @@ public class CookingPotBlockEntity extends SyncedBlockEntity {
         var state = getBlockState();
         state = state
             .setValue(CookingPotBlock.PORTIONS, 0)
-            .setValue(CookingPotBlock.COOKING_STATUS, CookingStatus.EMPTY);
+            .setValue(CookingPotBlock.COOKING_STATUS, CookingStatus.Empty);
 
         level.setBlock(pos, state, 2);
         setChanged();

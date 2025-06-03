@@ -1,4 +1,4 @@
-package svenhjol.charmony.brewing.common.features.cooking_pots;
+package svenhjol.charmony.brew_and_stew.common.features.cooking_pots;
 
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.core.BlockPos;

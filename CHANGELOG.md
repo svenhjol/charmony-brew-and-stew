@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.1
+
+- Rename to "brew and stew".
+- Pot now holds 4 portions.
+- Increase portion saturation and hunger.
+- Reduce consume time from 0.8 to 1.2.
+
 ## 1.4.0
 
 - Update for Charmony and API.

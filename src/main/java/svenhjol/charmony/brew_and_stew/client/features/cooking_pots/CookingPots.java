@@ -1,4 +1,4 @@
-package svenhjol.charmony.brewing.client.features.cooking_pots;
+package svenhjol.charmony.brew_and_stew.client.features.cooking_pots;
 
 import svenhjol.charmony.api.core.FeatureDefinition;
 import svenhjol.charmony.core.base.Mod;

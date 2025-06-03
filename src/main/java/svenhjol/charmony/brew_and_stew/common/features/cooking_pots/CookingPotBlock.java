@@ -1,4 +1,4 @@
-package svenhjol.charmony.brewing.common.features.cooking_pots;
+package svenhjol.charmony.brew_and_stew.common.features.cooking_pots;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -54,7 +54,7 @@ public class CookingPotBlock extends BaseEntityBlock {
 
         registerDefaultState(defaultBlockState()
             .setValue(PORTIONS, 0)
-            .setValue(COOKING_STATUS, CookingStatus.EMPTY));
+            .setValue(COOKING_STATUS, CookingStatus.Empty));
     }
 
     private CookingPotBlock(Properties properties) {
@@ -151,7 +151,7 @@ public class CookingPotBlock extends BaseEntityBlock {
                 int portions = state.getValue(PORTIONS);
                 var status = state.getValue(COOKING_STATUS);
 
-                if (status == CookingStatus.FILLED_WITH_WATER) {
+                if (status == CookingStatus.FilledWithWater) {
                     // When heated water, show white smoke and bubbles
                     var count = random.nextInt(5);
                     for (int i = 0; i < count; i++) {
@@ -167,7 +167,7 @@ public class CookingPotBlock extends BaseEntityBlock {
                         pos.getZ() + 0.13d + (0.7d * random.nextDouble()),
                         0.3d, 0.3d, 0.3d);
 
-                } else if (status == CookingStatus.HAS_SOME_FOOD) {
+                } else if (status == CookingStatus.HasSomeFood) {
                     // When in progress, show black smoke.
                     var count = random.nextInt(5);
                     for (int i = 0; i < count; i++) {
@@ -177,7 +177,7 @@ public class CookingPotBlock extends BaseEntityBlock {
                             pos.getZ() + 0.13d + (0.7d * random.nextDouble()),
                             0.0d, 0.0d, 0.0d);
                     }
-                } else if (status == CookingStatus.COOKED) {
+                } else if (status == CookingStatus.Cooked) {
                     var count = random.nextInt(5);
                     for (int i = 0; i < count; i++) {
                         level.addParticle(ParticleTypes.SMOKE,

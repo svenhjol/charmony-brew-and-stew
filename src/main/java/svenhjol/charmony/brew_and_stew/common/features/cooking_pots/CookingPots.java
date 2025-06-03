@@ -1,4 +1,4 @@
-package svenhjol.charmony.brewing.common.features.cooking_pots;
+package svenhjol.charmony.brew_and_stew.common.features.cooking_pots;
 
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.Item;
@@ -22,14 +22,14 @@ public final class CookingPots extends SidedFeature {
         description = """
             Number of hunger points restored from a single portion of mixed stew."""
     )
-    private static int stewHungerRestored = 6;
+    private static int stewHungerRestored = 9;
 
     @Configurable(
         name = "Stew saturation restored",
         description = """
             Amount of saturation restored from a single portion of mixed stew."""
     )
-    private static double stewSaturationRestored = 0.6d;
+    private static double stewSaturationRestored = 0.9d;
 
     @Configurable(
         name = "Stew stack size",

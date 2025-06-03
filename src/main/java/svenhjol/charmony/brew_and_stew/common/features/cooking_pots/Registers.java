@@ -1,4 +1,4 @@
-package svenhjol.charmony.brewing.common.features.cooking_pots;
+package svenhjol.charmony.brew_and_stew.common.features.cooking_pots;
 
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvent;
@@ -6,10 +6,10 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import svenhjol.charmony.brewing.common.features.cooking_pots.Networking.S2CAddedToCookingPot;
-import svenhjol.charmony.brewing.common.features.cooking_pots.dispenser.BowlBehavior;
-import svenhjol.charmony.brewing.common.features.cooking_pots.dispenser.PotionBehavior;
-import svenhjol.charmony.brewing.common.features.cooking_pots.dispenser.WaterBucketBehavior;
+import svenhjol.charmony.brew_and_stew.common.features.cooking_pots.Networking.S2CAddedToCookingPot;
+import svenhjol.charmony.brew_and_stew.common.features.cooking_pots.dispenser.BowlBehavior;
+import svenhjol.charmony.brew_and_stew.common.features.cooking_pots.dispenser.PotionBehavior;
+import svenhjol.charmony.brew_and_stew.common.features.cooking_pots.dispenser.WaterBucketBehavior;
 import svenhjol.charmony.core.base.Setup;
 import svenhjol.charmony.core.common.CommonRegistry;
 import svenhjol.charmony.api.core.Side;
