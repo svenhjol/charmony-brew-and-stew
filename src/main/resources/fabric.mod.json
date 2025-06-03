@@ -1,28 +1,25 @@
 {
   "schemaVersion": 1,
-  "id": "charmony-cooking",
+  "id": "charmony-brewing",
   "version": "${mod_version}",
 
-  "name": "Charmony Cooking",
+  "name": "Charmony Brewing",
   "description": "Adds cooking pots that let you combine any food into stew.",
 
   "authors": [
     "svenhjol",
     "Coranthes"
   ],
-  "icon": "assets/charmony-cooking/textures/gui/sprites/icon.png",
+  "icon": "assets/charmony/textures/gui/sprites/charmony-brewing.png",
   "license": "MIT",
   "environment": "*",
-  "accessWidener": "charmony-cooking.accesswidener",
+  "accessWidener": "charmony-brewing.accesswidener",
   "entrypoints": {
     "main": [
-        "svenhjol.charmony.cooking.common.CommonInitializer"
+      "svenhjol.charmony.brewing.common.CommonInitializer"
     ],
     "client": [
-        "svenhjol.charmony.cooking.client.ClientInitializer"
-    ],
-    "modmenu": [
-        "svenhjol.charmony.cooking.integration.ModMenuPlugin"
+      "svenhjol.charmony.brewing.client.ClientInitializer"
     ]
   },
 

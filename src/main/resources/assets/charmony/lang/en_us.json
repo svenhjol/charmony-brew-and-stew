@@ -1,0 +1,21 @@
+{
+  "advancements.charmony.cooking.title": "Cooking",
+  "advancements.charmony.cooking.description": "New ways to get food",
+  "advancements.charmony.obtained_cooking_pot.title": "What's Cooking?",
+  "advancements.charmony.obtained_cooking_pot.description": "Craft a cooking pot from copper ingots",
+  "advancements.charmony.prepared_cooking_pot.title": "The Pot Thickens",
+  "advancements.charmony.prepared_cooking_pot.description": "Light a fire under a cooking pot, fill it with water and start adding food",
+  "advancements.charmony.took_food_from_cooking_pot.title": "All You Can Eat",
+  "advancements.charmony.took_food_from_cooking_pot.description": "Take a bowl of Mixed Stew from a cooking pot",
+  "block.charmony.cooking_pot": "Cooking Pot",
+  "item.charmony.cooking_pot": "Cooking Pot",
+  "item.charmony.mixed_stew": "Mixed Stew",
+  "subtitles.charmony.block.cask.add": "Cask fills up",
+  "subtitles.charmony.block.cask.empty": "Cask is empty",
+  "subtitles.charmony.block.cask.name": "Cask given a name",
+  "subtitles.charmony.block.cask.take": "Cask empties",
+  "subtitles.charmony.block.cooking_pot.add": "Cooking pot fills up",
+  "subtitles.charmony.block.cooking_pot.ambient": "Cooking pot simmers",
+  "subtitles.charmony.block.cooking_pot.finish": "Cooking pot finishes cooking",
+  "subtitles.charmony.block.cooking_pot.take": "Cooking pot empties"
+}
