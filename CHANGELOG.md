@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.0
+
+- Port casks code.
+- Fully update for 1.21.6.
+
 ## 1.4.1
 
 - Rename to "brew and stew".

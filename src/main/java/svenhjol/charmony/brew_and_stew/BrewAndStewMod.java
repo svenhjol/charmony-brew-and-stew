@@ -9,7 +9,9 @@ import svenhjol.charmony.api.core.Side;
     id = BrewAndStewMod.ID,
     sides = {Side.Client, Side.Common},
     name = "Brew And Stew",
-    description = "Adds a cooking pot that can be used to combine different foods into a single stew.")
+    description = """
+Adds a cooking pot that can be used to combine different foods into a single stew
+and a cask that can combine and store potion effects.""")
 public final class BrewAndStewMod extends Mod {
     public static final String ID = "charmony-brew-and-stew";
     private static BrewAndStewMod instance;

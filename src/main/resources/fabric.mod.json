@@ -4,7 +4,7 @@
   "version": "${mod_version}",
 
   "name": "Charmony Brew and Stew",
-  "description": "Adds cooking pots that let you combine any food into stew.",
+  "description": "Adds cooking pots for combining food and casks for combining potions.",
 
   "authors": [
     "svenhjol",
