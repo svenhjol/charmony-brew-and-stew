@@ -1,6 +1,7 @@
 package svenhjol.charmony.brew_and_stew.common.features.casks;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
@@ -133,6 +134,27 @@ public class Handlers extends Setup<Casks> {
         }
 
         return InteractionResult.PASS;
+    }
+
+    public Optional<ItemStack> dispenserTakeFromCask(CaskBlockEntity cask) {
+        return Optional.ofNullable(cask.take());
+    }
+
+    public boolean dispenserAddToCask(CaskBlockEntity cask, ItemStack stack) {
+        var level = cask.getLevel();
+        var pos = cask.getBlockPos();
+
+        if (level == null) {
+            return false;
+        }
+
+        var result = cask.add(stack);
+        if (result) {
+            // Drop a glass bottle out from the bottom.
+            CaskBlock.popResourceFromFace(level, pos, Direction.DOWN, new ItemStack(Items.GLASS_BOTTLE));
+        }
+
+        return result;
     }
 
     public Optional<ItemStack> restoreCustomPotionEffects(ItemStack original, ItemStack result) {

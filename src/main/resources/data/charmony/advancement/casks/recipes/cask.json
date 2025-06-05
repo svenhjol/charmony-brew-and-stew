@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "charm:casks/cask"
+        "recipe": "charmony:casks/cask"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "charm:casks/cask"
+      "charmony:casks/cask"
     ]
   }
 }

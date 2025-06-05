@@ -187,10 +187,9 @@ public class CaskBlock extends BaseEntityBlock implements FuelProvider {
     void createEffectParticle(Level level, BlockPos pos, MobEffect effect) {
         var random = level.getRandom();
         var color = new Color(effect.getColor());
+        var particle = ColorParticleOption.create(ParticleTypes.ENTITY_EFFECT, color.getArgbColor());
 
-        var p = ColorParticleOption.create(ParticleTypes.ENTITY_EFFECT, color.getArgbColor());
-
-        level.addParticle(p,
+        level.addParticle(particle,
             pos.getX() + 0.13d + (0.7d * random.nextDouble()),
             pos.getY() + 0.5d,
             pos.getZ() + 0.13d + (0.7d * random.nextDouble()),

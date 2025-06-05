@@ -2,9 +2,12 @@ package svenhjol.charmony.brew_and_stew.common.features.casks;
 
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import svenhjol.charmony.api.core.Side;
 import svenhjol.charmony.brew_and_stew.common.features.casks.Networking.S2CAddedToCask;
+import svenhjol.charmony.brew_and_stew.common.features.casks.dispenser.GlassBottleBehavior;
+import svenhjol.charmony.brew_and_stew.common.features.casks.dispenser.PotionBehavior;
 import svenhjol.charmony.core.base.Setup;
 import svenhjol.charmony.core.common.CommonRegistry;
 
@@ -53,5 +56,8 @@ public class Registers extends Setup<Casks> {
         emptySound = registry.sound("cask_empty");
         nameSound = registry.sound("cask_name");
         takeSound = registry.sound("cask_take");
+
+        registry.conditionalDispenserBehavior(() -> Items.GLASS_BOTTLE, GlassBottleBehavior::new);
+        registry.conditionalDispenserBehavior(() -> Items.POTION, PotionBehavior::new);
     }
 }

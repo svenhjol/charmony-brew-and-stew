@@ -15,6 +15,7 @@
   "advancements.charmony.took_food_from_cooking_pot.description": "Take a bowl of Mixed Stew from a cooking pot",
   "block.charmony.cask": "Cask",
   "block.charmony.cooking_pot": "Cooking Pot",
+  "container.charmony.cask": "Cask",
   "gui.charmony.cask.bottles": "Number of bottles: %s",
   "gui.charmony.cask.only_contains_water": "Only contains water",
   "item.charmony.cask": "Cask",

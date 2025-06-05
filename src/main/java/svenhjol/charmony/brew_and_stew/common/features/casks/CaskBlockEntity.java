@@ -1,6 +1,8 @@
 package svenhjol.charmony.brew_and_stew.common.features.casks;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponentGetter;
+import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
@@ -132,6 +134,7 @@ public class CaskBlockEntity extends SyncedBlockEntity implements Nameable {
                     var duration = effect.getDuration();
                     var amplifier = effect.getAmplifier();
                     var type = effect.getEffect();
+                    var instantenous = type.value().isInstantenous();
                     var effectId = BuiltInRegistries.MOB_EFFECT.getKey(type.value());
 
                     if (effectId == null) {
@@ -142,21 +145,29 @@ public class CaskBlockEntity extends SyncedBlockEntity implements Nameable {
                         effects.add(effectId);
                     }
 
-                    if (amplifiers.containsKey(effectId)) {
-                        int existingAmplifier = amplifiers.get(effectId);
-                        changedAmplifier = amplifier != existingAmplifier;
-                    }
-                    amplifiers.put(effectId, amplifier);
+                    if (instantenous) {
+                        if (amplifiers.containsKey(effectId)) {
+                            int existingAmplifier = amplifiers.get(effectId);
+                            changedAmplifier = amplifier != existingAmplifier;
+                        }
+                        amplifiers.put(effectId, amplifier);
 
-                    if (!durations.containsKey(effectId)) {
-                        durations.put(effectId, duration);
-                    } else {
-                        var existingDuration = durations.get(effectId);
-                        if (changedAmplifier) {
+                        if (!durations.containsKey(effectId)) {
                             durations.put(effectId, duration);
                         } else {
-                            durations.put(effectId, existingDuration + duration);
+                            var existingDuration = durations.get(effectId);
+                            if (changedAmplifier) {
+                                durations.put(effectId, duration);
+                            } else {
+                                durations.put(effectId, existingDuration + duration);
+                            }
                         }
+                    } else {
+                        // For effects that apply immediately (instant health, harming etc).
+                        var existingDuration = durations.getOrDefault(effectId, 0);
+                        var existingAmplifier = amplifiers.getOrDefault(effectId, -1);
+                        durations.put(effectId, existingDuration + 1); // Keep track of how many we've added.
+                        amplifiers.put(effectId, existingAmplifier == -1 ? amplifier : Math.min(existingAmplifier, amplifier)); // Always take the smallest amplifier.
                     }
                 });
             }
@@ -176,6 +187,7 @@ public class CaskBlockEntity extends SyncedBlockEntity implements Nameable {
                 level.playSound(null, getBlockPos(), feature().registers.addSound.get(), SoundSource.BLOCKS, 1.0f, 1.0f);
             }
 
+            debugShowContents();
             setChanged();
             return true;
         }
@@ -206,7 +218,6 @@ public class CaskBlockEntity extends SyncedBlockEntity implements Nameable {
     }
 
     private ItemStack getBottle() {
-        // create a potion from the cask's contents
         List<MobEffectInstance> effects = new ArrayList<>();
 
         for (var effectId : this.effects) {
@@ -250,7 +261,40 @@ public class CaskBlockEntity extends SyncedBlockEntity implements Nameable {
         this.bottles = 0;
         this.fermentation = 1.0d;
 
+        debugShowContents();
         setChanged();
+    }
+
+    @Override
+    protected void applyImplicitComponents(DataComponentGetter dataComponentGetter) {
+        super.applyImplicitComponents(dataComponentGetter);
+
+        var caskData = dataComponentGetter.getOrDefault(feature().registers.caskData.get(), CaskData.EMPTY);
+
+        this.name = dataComponentGetter.get(DataComponents.CUSTOM_NAME);
+        this.bottles = caskData.bottles();
+        this.fermentation = caskData.fermentation();
+        this.effects = caskData.effects();
+        this.durations = caskData.durations();
+        this.amplifiers = caskData.amplifiers();
+        this.dilutions = caskData.dilutions();
+    }
+
+    @Override
+    protected void collectImplicitComponents(DataComponentMap.Builder builder) {
+        super.collectImplicitComponents(builder);
+
+        var caskData = feature().registers.caskData.get();
+
+        builder.set(DataComponents.CUSTOM_NAME, this.name);
+        builder.set(caskData, new CaskData(
+            this.bottles,
+            this.fermentation,
+            this.effects,
+            this.durations,
+            this.amplifiers,
+            this.dilutions
+        ));
     }
 
     @Override
@@ -286,5 +330,29 @@ public class CaskBlockEntity extends SyncedBlockEntity implements Nameable {
 
     protected static Casks feature() {
         return Casks.feature();
+    }
+
+    private void debugShowContents() {
+        var log = feature().log();
+
+        log.dev("-- Cask contents --");
+        if (!effects.isEmpty()) {
+            log.dev("Effects:");
+            effects.forEach(e -> log.dev("  " + e.toString()));
+        }
+        if (!durations.isEmpty()) {
+            log.dev("Durations:");
+            durations.forEach((key, value) -> log.dev("  " + key.toString() + " = " + value));
+        }
+        if (!amplifiers.isEmpty()) {
+            log.dev("Amplifiers:");
+            amplifiers.forEach((key, value) -> log.dev("  " + key.toString() + " = " + value));
+        }
+        if (!durations.isEmpty()) {
+            log.dev("Dilutions:");
+            dilutions.forEach((key, value) -> log.dev("  " + key.toString() + " = " + value));
+        }
+        log.dev("Bottles: " + bottles);
+        log.dev("Fermentation: " + fermentation);
     }
 }
