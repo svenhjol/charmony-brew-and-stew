@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponentGetter;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.ByteBufCodecs;
@@ -64,10 +65,18 @@ public record CaskData(
 
     @Override
     public void addToTooltip(Item.TooltipContext tooltipContext, Consumer<Component> consumer, TooltipFlag tooltipFlag, DataComponentGetter dataComponentGetter) {
-        if (effects.isEmpty()) {
-            consumer.accept(Component.translatable("gui.charmony.cask.only_contains_water"));
-        } else {
-            consumer.accept(Component.translatable("gui.charmony.cask.bottles", bottles).withStyle(ChatFormatting.AQUA));
+        consumer.accept(Component.translatable("gui.charmony.cask.bottles", bottles).withStyle(ChatFormatting.AQUA));
+
+        if (!effects.isEmpty()) {
+            for (var effect : effects()) {
+                var mobEffect = BuiltInRegistries.MOB_EFFECT.get(effect).orElse(null);
+                if (mobEffect == null) continue;
+                consumer.accept(Component.translatable(mobEffect.value().getDescriptionId())
+                    .withStyle(ChatFormatting.BLUE));
+            }
+        } else if (bottles > 0) {
+            consumer.accept(Component.translatable("gui.charmony.cask.only_contains_water")
+                .withStyle(ChatFormatting.BLUE));
         }
     }
 }

@@ -59,5 +59,7 @@ public class Registers extends Setup<Casks> {
 
         registry.conditionalDispenserBehavior(() -> Items.GLASS_BOTTLE, GlassBottleBehavior::new);
         registry.conditionalDispenserBehavior(() -> Items.POTION, PotionBehavior::new);
+
+        registry.dataComponentTooltipProvider(caskData);
     }
 }

@@ -145,7 +145,7 @@ public class CaskBlockEntity extends SyncedBlockEntity implements Nameable {
                         effects.add(effectId);
                     }
 
-                    if (instantenous) {
+                    if (!instantenous) {
                         if (amplifiers.containsKey(effectId)) {
                             int existingAmplifier = amplifiers.get(effectId);
                             changedAmplifier = amplifier != existingAmplifier;
