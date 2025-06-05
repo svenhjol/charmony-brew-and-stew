@@ -11,7 +11,7 @@ import svenhjol.charmony.core.Charmony;
 import svenhjol.charmony.core.base.Setup;
 import svenhjol.charmony.core.helpers.PlayerHelper;
 
-public final class Networking extends Setup<CookingPots> {
+public class Networking extends Setup<CookingPots> {
     public Networking(CookingPots feature) {
         super(feature);
     }

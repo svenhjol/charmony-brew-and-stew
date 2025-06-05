@@ -11,7 +11,7 @@ import svenhjol.charmony.core.base.Setup;
 import svenhjol.charmony.brew_and_stew.common.features.cooking_pots.CookingPotBlock;
 import svenhjol.charmony.brew_and_stew.common.features.cooking_pots.Networking.S2CAddedToCookingPot;
 
-public final class Handlers extends Setup<CookingPots> {
+public class Handlers extends Setup<CookingPots> {
     public Handlers(CookingPots feature) {
         super(feature);
     }

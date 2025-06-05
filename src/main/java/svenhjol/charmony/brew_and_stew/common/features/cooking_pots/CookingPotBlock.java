@@ -11,6 +11,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -208,8 +209,8 @@ public class CookingPotBlock extends BaseEntityBlock {
         }
     }
 
-    public static class BlockItem extends net.minecraft.world.item.BlockItem {
-        public BlockItem(Supplier<CookingPotBlock> block, ResourceKey<Item> key) {
+    public static class CookingPotBlockItem extends BlockItem {
+        public CookingPotBlockItem(Supplier<CookingPotBlock> block, ResourceKey<Item> key) {
             super(block.get(), new Properties().setId(key));
         }
     }

@@ -1,0 +1,35 @@
+{
+  "parent": "charmony:root",
+  "display": {
+    "icon": {
+      "id": "charmony:cask"
+    },
+    "title": {
+      "translate": "advancements.charmony.obtained_cask.title"
+    },
+    "description": {
+      "translate": "advancements.charmony.obtained_cask.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "obtained_cask": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["charmony:cask"]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtained_cask"
+    ]
+  ]
+}

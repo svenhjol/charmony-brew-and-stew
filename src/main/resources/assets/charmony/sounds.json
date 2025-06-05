@@ -1,4 +1,52 @@
 {
+  "cask_add": {
+    "sounds": [
+      {
+        "name": "charmony:cask_add1",
+        "volume": 0.7
+      },
+      {
+        "name": "charmony:cask_add2",
+        "volume": 0.7
+      }
+    ],
+    "subtitle": "subtitles.charmony.block.cask.add"
+  },
+  "cask_empty": {
+    "sounds": [
+      {
+        "name": "charmony:cask_empty1",
+        "volume": 0.7
+      },
+      {
+        "name": "charmony:cask_empty2",
+        "volume": 0.7
+      }
+    ],
+    "subtitle": "subtitles.charmony.block.cask.empty"
+  },
+  "cask_name": {
+    "sounds": [
+      {
+        "name": "charmony:cask_name",
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.charmony.block.cask.name"
+  },
+  "cask_take": {
+    "sounds": [
+      {
+        "name": "charmony:cask_take1",
+        "volume": 0.7
+      },
+      {
+        "name": "charmony:cask_take2",
+        "volume": 0.7
+      }
+    ],
+    "subtitle": "subtitles.charmony.block.cask.take"
+  },
   "cooking_pot_add": {
     "sounds": [
       {

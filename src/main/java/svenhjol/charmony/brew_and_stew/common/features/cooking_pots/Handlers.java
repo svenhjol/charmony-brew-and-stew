@@ -26,7 +26,7 @@ import svenhjol.charmony.core.helpers.PlayerHelper;
 
 import java.util.Optional;
 
-public final class Handlers extends Setup<CookingPots> {
+public class Handlers extends Setup<CookingPots> {
     public static final int MAX_PORTIONS = 4;
 
     public Handlers(CookingPots feature) {

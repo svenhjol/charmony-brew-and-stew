@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "svenhjol.charmony.brew_and_stew.common.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "${refmap_file}",
+  "plugin": "svenhjol.charmony.brew_and_stew.common.mixins.CommonMixinConfig",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "casks.PotionBrewingMixin"
+  ]
+}

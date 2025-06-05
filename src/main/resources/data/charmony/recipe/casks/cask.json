@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PCP",
+    "P P",
+    "PCP"
+  ],
+  "key": {
+    "P": "#minecraft:planks",
+    "C": "minecraft:copper_ingot"
+  },
+  "result": {
+    "id": "charmony:cask"
+  }
+}

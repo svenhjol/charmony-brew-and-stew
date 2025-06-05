@@ -8,7 +8,7 @@ import svenhjol.charmony.brew_and_stew.common.features.cooking_pots.Networking;
 
 import java.util.List;
 
-public final class Registers extends Setup<CookingPots> {
+public class Registers extends Setup<CookingPots> {
     public Registers(CookingPots feature) {
         super(feature);
         var registry = ClientRegistry.forFeature(feature);

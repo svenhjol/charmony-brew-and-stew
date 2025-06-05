@@ -3,6 +3,7 @@ package svenhjol.charmony.brew_and_stew.common;
 import net.fabricmc.api.ModInitializer;
 import svenhjol.charmony.api.core.Side;
 import svenhjol.charmony.brew_and_stew.BrewAndStewMod;
+import svenhjol.charmony.brew_and_stew.common.features.casks.Casks;
 import svenhjol.charmony.brew_and_stew.common.features.cooking_pots.CookingPots;
 
 public final class CommonInitializer implements ModInitializer {
@@ -13,6 +14,7 @@ public final class CommonInitializer implements ModInitializer {
 
         // Prepare and run the mod.
         var mod = BrewAndStewMod.instance();
+        mod.addSidedFeature(Casks.class);
         mod.addSidedFeature(CookingPots.class);
         mod.run(Side.Common);
     }

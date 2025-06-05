@@ -18,12 +18,12 @@ import svenhjol.charmony.core.helpers.ItemOverrideHelper;
 import java.util.List;
 import java.util.function.Supplier;
 
-public final class Registers extends Setup<CookingPots> {
+public class Registers extends Setup<CookingPots> {
     private static final String BLOCK_ID = "cooking_pot";
     private static final String MIXED_STEW_ID = "mixed_stew";
 
     public final Supplier<CookingPotBlock> block;
-    public final Supplier<CookingPotBlock.BlockItem> blockItem;
+    public final Supplier<CookingPotBlock.CookingPotBlockItem> blockItem;
     public final Supplier<BlockEntityType<CookingPotBlockEntity>> blockEntity;
     public final Supplier<MixedStewItem> mixedStewItem;
     public final Supplier<SoundEvent> addSound;
@@ -38,7 +38,7 @@ public final class Registers extends Setup<CookingPots> {
         var registry = CommonRegistry.forFeature(feature);
 
         block = registry.block(BLOCK_ID, CookingPotBlock::new);
-        blockItem = registry.item(BLOCK_ID, key -> new CookingPotBlock.BlockItem(block, key));
+        blockItem = registry.item(BLOCK_ID, key -> new CookingPotBlock.CookingPotBlockItem(block, key));
         blockEntity = registry.blockEntity(BLOCK_ID, () -> CookingPotBlockEntity::new, List.of(block));
 
         mixedStewFoodProperties = feature().handlers.buildMixedStewProperties();
