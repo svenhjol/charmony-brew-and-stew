@@ -8,7 +8,7 @@ import svenhjol.charmony.api.core.Side;
 @ModDefinition(
     id = BrewAndStewMod.ID,
     sides = {Side.Client, Side.Common},
-    name = "Brew And Stew",
+    name = "Brew and Stew",
     description = """
 Adds a cooking pot that can be used to combine different foods into a single stew
 and a cask that can combine and store potion effects.""")

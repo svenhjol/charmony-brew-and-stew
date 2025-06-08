@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.0
+
+- Move elixirs code from relics.
+
 ## 1.5.0
 
 - Port casks code.
