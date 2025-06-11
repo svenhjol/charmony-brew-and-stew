@@ -40,13 +40,13 @@ public class Registers extends Setup<Elixirs> {
     public Runnable boot() {
         return () -> {
             // Implementation to get an elixir from a given definition ID.
-            ElixirsApi.instance().setElixirImpl((id, provider, random) -> {
+            ElixirsApi.Impl.elixir((id, provider, random) -> {
                 var def = elixirDefinitions.getOrDefault(id, null);
                 if (def == null) return ItemStack.EMPTY;
                 return feature().handlers.createElixirItem(def, provider, random);
             });
 
-            ElixirsApi.instance().setRandomElixirImpl((provider, random) -> {
+            ElixirsApi.Impl.randomElixir((provider, random) -> {
                 var defs = new ArrayList<>(elixirDefinitions.values());
                 if (defs.isEmpty()) return ItemStack.EMPTY;
 
