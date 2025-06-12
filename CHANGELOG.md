@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.2
+
+- Slightly increased chance of an elixir being provided by a trial chambers vault or found in a stronghold corridor.
+
 ## 1.6.1
 
 - Update API implementation methods.

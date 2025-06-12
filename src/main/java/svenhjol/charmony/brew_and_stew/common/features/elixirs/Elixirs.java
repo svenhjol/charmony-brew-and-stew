@@ -31,7 +31,7 @@ public final class Elixirs extends SidedFeature {
         description = """
             Chance (out of 1.0) of an elixir being found in a stronghold corridor chest."""
     )
-    private static double strongholdCorridorChance = 0.25d;
+    private static double strongholdCorridorChance = 0.33d;
 
     @Configurable(
         name = "Cleric gift chance",
@@ -45,7 +45,7 @@ public final class Elixirs extends SidedFeature {
         description = """
             Chance (out of 1.0) of an elixir being provided by a Trial Chambers vault."""
     )
-    private static double trialChambersChance = 0.25d;
+    private static double trialChambersChance = 0.33d;
 
     @Configurable(
         name = "Common elixir min amplifier",
