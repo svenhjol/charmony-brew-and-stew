@@ -22,14 +22,14 @@ public final class CookingPots extends SidedFeature {
         description = """
             Number of hunger points restored from a single portion of mixed stew."""
     )
-    private static int stewHungerRestored = 9;
+    private static int stewHungerRestored = 6;
 
     @Configurable(
         name = "Stew saturation restored",
         description = """
             Amount of saturation restored from a single portion of mixed stew."""
     )
-    private static double stewSaturationRestored = 0.9d;
+    private static double stewSaturationRestored = 0.8d;
 
     @Configurable(
         name = "Stew stack size",

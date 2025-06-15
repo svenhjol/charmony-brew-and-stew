@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.3
+
+- Nerf the hunger and saturation restored by a portion of stew. Provided defaults were erroneous.
+
 ## 1.6.2
 
 - Slightly increased chance of an elixir being provided by a trial chambers vault or found in a stronghold corridor.
